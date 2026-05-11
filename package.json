@@ -1,0 +1,34 @@
+{
+  "name": "top-staking-yield-crypto-token-finder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Workflow for canonical top-1000 crypto token discovery, official link validation, and staking yield discovery.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cobecheng/Top-staking-yield-crypto-token-finder.git"
+  },
+  "keywords": [
+    "crypto",
+    "staking",
+    "yield",
+    "coingecko",
+    "research"
+  ],
+  "scripts": {
+    "setup:x": "npm install --no-save --package-lock=false xactions@3.0.44",
+    "build:marketcap": "python3 fetch_top1000_marketcap_coingecko_canonical.py",
+    "build:unresolved": "python3 build_unresolved_staking_queue.py",
+    "scan:x": "node scan_x_staking_signals_batch.mjs",
+    "scan:x:fallback": "node scan_x_search_staking_fallback.mjs"
+  },
+  "peerDependencies": {
+    "xactions": "3.0.44"
+  },
+  "peerDependenciesMeta": {
+    "xactions": {
+      "optional": true
+    }
+  }
+}
